@@ -2,12 +2,11 @@
 
 .header{
    height: 80px;
-   background-color: var(--color-border);
+   background-color: var(--color-section);
 
-   &-container {
+   &-wrapper {
       @include mix.flex-center;
       flex-direction: column;
-      row-gap: 1px;
 
       height: 100%;
    }

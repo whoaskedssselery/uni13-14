@@ -18,8 +18,8 @@
   --color-bg-alt: #ffffff;
   --color-primary: #d98324;
   --color-accent: #a23b72;
-  --color-text: #3b3a36;
-  --color-muted: #8b8682;
+  --color-hover: #3b3a36;
+  --color-muted: #efd6b4;
   --color-border: #d1c7b7;
   --font-family: "Montserrat", sans-serif;
   --link-height: 20px;
@@ -237,14 +237,40 @@ body {
 
 a {
   display: flex;
-  color: var(--color-text);
+  color: var(--color-dark);
   text-decoration: underline;
   transition: color 0.2s ease;
-  height: var(--link-height);
-  width: 100%;
 }
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-hover);
+}
+
+.logo {
+  font-size: clamp(24px, 24px + (32 - 24) * (100vw - 400px) / 1520, 32px);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.header {
+  height: 80px;
+  background-color: var(--color-border);
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1px;
+  height: 100%;
 }
 
 .footer {
@@ -257,7 +283,7 @@ a:hover {
   height: 100%;
   margin-top: auto;
   padding-block: 10px;
-  background-color: var(--color-muted);
+  background-color: var(--color-border);
 }
 .footer__menu {
   display: flex;

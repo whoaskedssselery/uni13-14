@@ -20,13 +20,13 @@ body {
 
 a {
   display: flex;
-  color: var(--color-text);
+
+  color: var(--color-dark);
+
   text-decoration: underline;
   transition: color 0.2s ease;
-  height: var(--link-height);
-  width: 100%;
 
   &:hover {
-    color: var(--color-accent);
+    color: var(--color-hover);
   }
 }

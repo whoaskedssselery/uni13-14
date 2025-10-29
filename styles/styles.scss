@@ -5,5 +5,7 @@
 @use "./mixins";
 @use "./media";
 
+@use "./components/logo";
+@use "./components/navigation";
 @use "./components/header";
 @use "./components/footer";

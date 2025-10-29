@@ -9,7 +9,7 @@
    margin-top: auto;
    padding-block: 10px;
 
-   background-color: var(--color-muted);
+   background-color: var(--color-border);
 
    &__menu {
       @include mix.flex-center;

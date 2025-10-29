@@ -1,0 +1,14 @@
+@use "../mixins" as mix;
+
+.header{
+   height: 80px;
+   background-color: var(--color-border);
+
+   &-container {
+      @include mix.flex-center;
+      flex-direction: column;
+      row-gap: 1px;
+
+      height: 100%;
+   }
+}

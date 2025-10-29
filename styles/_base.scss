@@ -1,7 +1,12 @@
+body,
+html {
+   max-width: 1440px;
+   width: 100%;
+}
+
 body {
    display: flex;
    flex-direction: column;
-   min-height: 100vh;
 
    font-size: 16px;
 
@@ -14,9 +19,12 @@ body {
 }
 
 a {
-  color: var(--color-primary);
-  text-decoration: none;
+  display: flex;
+  color: var(--color-text);
+  text-decoration: underline;
   transition: color 0.2s ease;
+  height: var(--link-height);
+  width: 100%;
 
   &:hover {
     color: var(--color-accent);

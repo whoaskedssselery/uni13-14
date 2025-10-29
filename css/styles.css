@@ -22,6 +22,7 @@
   --color-muted: #8b8682;
   --color-border: #d1c7b7;
   --font-family: "Montserrat", sans-serif;
+  --link-height: 20px;
 }
 
 /**
@@ -132,15 +133,6 @@ html {
     (когда, например, нужно будет "прижать" футер к низу сайта)
    */
   height: 100%;
-  /**
-    Убираем скачок интерфейса по горизонтали
-    при появлении / исчезновении скроллбара
-   */
-  scrollbar-gutter: stable;
-  /**
-    Плавный скролл
-   */
-  scroll-behavior: smooth;
 }
 
 body {
@@ -226,10 +218,15 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+body,
+html {
+  max-width: 1440px;
+  width: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   font-size: 16px;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -239,10 +236,38 @@ body {
 }
 
 a {
-  color: var(--color-primary);
-  text-decoration: none;
+  display: flex;
+  color: var(--color-text);
+  text-decoration: underline;
   transition: color 0.2s ease;
+  height: var(--link-height);
+  width: 100%;
 }
 a:hover {
   color: var(--color-accent);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  max-height: 75px;
+  height: 100%;
+  margin-top: auto;
+  padding-block: 10px;
+  background-color: var(--color-muted);
+}
+.footer__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.footer__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */

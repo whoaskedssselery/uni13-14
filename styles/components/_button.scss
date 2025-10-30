@@ -2,6 +2,7 @@
    display: flex;
    align-self: center;
    background-color: var(--color-hover);
+   text-decoration: none;
    color: var(--color-bg-alt);
    border: none;
    border-radius: 8px;
@@ -12,5 +13,6 @@
 
    &:hover {
       background-color: var(--color-muted);
+      color: var(--color-bg-alt);
    }
 }

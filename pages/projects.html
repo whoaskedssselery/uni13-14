@@ -1,113 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>SSSELERY | PROJECTS</title>
-   <link rel="shortcut icon" href="../assets/img/logo.ico" type="image/x-icon">
-   <link rel="stylesheet" href="../css/styles.css">
+   <link rel="shortcut icon" href="../assets/img/logo.ico" type="image/x-icon" />
+   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
    <header class="header">
       <div class="header-wrapper">
-         <a href="index.html" class="header__logo logo">ssselery</a>
+         <a href="../index.html" class="header__logo logo">ssselery</a>
          <nav class="nav">
             <ul class="nav__list">
-               <li class="nav__item"><a href="../index.html">Главная</a></li>
-               <li class="nav__item"><a href="./projects.html">Проекты</a></li>
-               <li class="nav__item"><a href="./diary.html">Дневник</a></li>
-               <li class="nav__item"><a href="./contacts.html">Контакты</a></li>
+               <li><a href="../index.html">Главная</a></li>
+               <li><a href="./projects.html" class="active">Проекты</a></li>
+               <li><a href="./dairy.html">Дневник</a></li>
+               <li><a href="./contacts.html">Контакты</a></li>
             </ul>
          </nav>
       </div>
    </header>
 
    <main class="content">
+      <section class="projects container">
+         <h1 class="projects__title-new">Мои проекты</h1>
+         <p class="projects__subtitle">Полная коллекция учебных и личных работ.</p>
 
-      <section class="projects-page container">
-         <h1 class="projects-page__title">Проекты</h1>
-         <p class="projects-page__subtitle">
-            Здесь собраны учебные и личные работы. Используй фильтр справа, чтобы выбрать нужную категорию.
-         </p>
+         <div class="projects__filter-header">
+            <button id="filter-toggle" class="button filter-btn">Фильтры ▾</button>
+         </div>
 
-         <div class="projects-page__wrapper">
-            <div class="projects-page__grid">
-               <article class="project-card" data-category="layout">
-                  <img src="../assets/img/project1.png" alt="Landing Page" class="project-card__img">
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">Landing Page</h3>
-                     <p class="project-card__desc">
-                        Одностраничный сайт для бренда. Адаптивная верстка и плавные анимации.
-                     </p>
-                     <a href="https://github.com/whoaskedssselery?tab=repositories" class="project-card__btn button"
-                        target="_blank">Подробнее</a>
-                  </div>
-               </article>
+         <div class="projects-filter hidden" id="projects-filter">
+            <form id="project-filter-form" class="projects-filter__form">
+               <label><input type="radio" name="category" value="all" checked> Все проекты</label>
+               <label><input type="radio" name="category" value="layout"> Верстка</label>
+               <label><input type="radio" name="category" value="linux"> Linux / Ubuntu</label>
+               <label><input type="radio" name="category" value="portfolio"> Портфолио</label>
+               <label><input type="radio" name="category" value="practice"> Учебные</label>
+            </form>
+         </div>
 
-               <article class="project-card" data-category="linux">
-                  <img src="../assets/img/project2.png" alt="Customization repo" class="project-card__img">
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">Customization Repo</h3>
-                     <p class="project-card__desc">
-                        Репозиторий с инструкцией по кастомизации Ubuntu и конфигурации рабочего окружения.
-                     </p>
-                     <a href="https://github.com/whoaskedssselery?tab=repositories" class="project-card__btn button"
-                        target="_blank">Подробнее</a>
-                  </div>
-               </article>
+         <div class="projects__grid">
+            <article class="project-card" data-category="layout">
+               <img src="../assets/img/project1.png" alt="Landing Page" class="project-card__img" />
+               <div class="project-card__content">
+                  <h3 class="project-card__title">Landing Page</h3>
+                  <p class="project-card__desc">
+                     Одностраничный сайт для бренда. Адаптивная верстка и плавные анимации.
+                  </p>
+               </div>
+            </article>
 
-               <article class="project-card" data-category="portfolio layout">
-                  <img src="../assets/img/project3.png" alt="Portfolio Website" class="project-card__img">
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">Portfolio Website</h3>
-                     <p class="project-card__desc">
-                        Личный сайт-портфолио на SCSS и компонентной структуре. Полностью адаптивен.
-                     </p>
-                     <a href="https://github.com/whoaskedssselery/uni13-14/" class="project-card__btn button"
-                        target="_blank">Подробнее</a>
-                  </div>
-               </article>
+            <article class="project-card" data-category="linux">
+               <img src="../assets/img/project2.png" alt="Customization Repo" class="project-card__img" />
+               <div class="project-card__content">
+                  <h3 class="project-card__title">Customization Repo</h3>
+                  <p class="project-card__desc">
+                     Репозиторий с инструкцией по кастомизации Ubuntu и конфигурации рабочего окружения.
+                  </p>
+               </div>
+            </article>
 
-               <article class="project-card" data-category="practice">
-                  <img src="../assets/img/project4.png" alt="FrontPractise" class="project-card__img">
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">FrontPractise</h3>
-                     <p class="project-card__desc">
-                        Учебный репозиторий с материалами и кодом по HTML, CSS, SCSS и JS.
-                     </p>
-                     <a href="https://github.com/whoaskedssselery/FrontPractise" class="project-card__btn button"
-                        target="_blank">Подробнее</a>
-                  </div>
-               </article>
-            </div>
+            <article class="project-card" data-category="portfolio layout">
+               <img src="../assets/img/project3.png" alt="Portfolio Website" class="project-card__img" />
+               <div class="project-card__content">
+                  <h3 class="project-card__title">Portfolio Website</h3>
+                  <p class="project-card__desc">
+                     Личный сайт-портфолио на SCSS и компонентной структуре. Полностью адаптивен.
+                  </p>
+               </div>
+            </article>
 
-            <aside class="projects-filter">
-               <h3 class="projects-filter__title">Фильтр проектов</h3>
-
-               <form id="project-filter-form">
-                  <label><input type="radio" name="category" value="all" checked> Все проекты</label>
-                  <label><input type="radio" name="category" value="layout"> Верстка</label>
-                  <label><input type="radio" name="category" value="linux"> Linux / Ubuntu</label>
-                  <label><input type="radio" name="category" value="portfolio"> Портфолио</label>
-                  <label><input type="radio" name="category" value="practice"> Учебные</label>
-               </form>
-            </aside>
+            <article class="project-card" data-category="practice">
+               <img src="../assets/img/project4.png" alt="FrontPractise" class="project-card__img" />
+               <div class="project-card__content">
+                  <h3 class="project-card__title">FrontPractise</h3>
+                  <p class="project-card__desc">
+                     Учебный репозиторий с материалами и кодом по HTML, CSS, SCSS и JS.
+                  </p>
+               </div>
+            </article>
          </div>
       </section>
 
-
    </main>
+
+   <div class="project-modal" id="project-modal">
+      <div class="project-modal__content">
+         <button class="project-modal__close" id="modal-close">×</button>
+         <img src="" alt="Скриншот проекта" class="project-modal__img" />
+         <h3 class="project-modal__title"></h3>
+         <p class="project-modal__desc"></p>
+         <a href="#" target="_blank" class="button" id="modal-code">Исходный код</a>
+      </div>
+   </div>
 
    <footer class="footer">
       <ul class="footer__menu">
-         <li class="footer__item">
-            <p class="footer__desc">© 2025-2026 гг. Все права защищены</p>
+         <li>
+            <p class="footer__desc">© 2025–2026 гг. Все права защищены</p>
          </li>
-         <li class="footer__item">
-            <a href="https://github.com/whoaskedssselery/" class="footer__link">github.com/whoaskedssselery</a>
-         </li>
+         <li><a href="https://github.com/whoaskedssselery/" class="footer__link">github.com/whoaskedssselery</a></li>
       </ul>
    </footer>
 

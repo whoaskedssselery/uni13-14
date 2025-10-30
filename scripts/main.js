@@ -24,3 +24,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const checked = form.querySelector('input[name="category"]:checked');
   applyFilter(checked ? checked.value : 'all');
 });
+
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = contactForm.querySelector('#name');
+    const email = contactForm.querySelector('#email');
+    const message = contactForm.querySelector('#message');
+
+    if (!name.value.trim()) {
+      showNotification('Введите имя', 'error');
+      name.focus();
+      return;
+    }
+
+    if (!validateEmail(email.value)) {
+      showNotification('Введите корректный email', 'error');
+      email.focus();
+      return;
+    }
+
+    if (!message.value.trim()) {
+      showNotification('Введите сообщение', 'error');
+      message.focus();
+      return;
+    }
+
+    showNotification('Сообщение успешно отправлено!', 'success');
+    contactForm.reset();
+  });
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email.toLowerCase());
+}
+
+function showNotification(text, type = 'success') {
+  const existing = document.querySelector('.notification');
+  if (existing) existing.remove();
+
+  const note = document.createElement('div');
+  note.className = `notification ${type}`;
+  note.textContent = text;
+
+  document.body.appendChild(note);
+
+  setTimeout(() => note.classList.add('show'), 10);
+  setTimeout(() => {
+    note.classList.remove('show');
+    setTimeout(() => note.remove(), 300);
+  }, 3000);
+}
+

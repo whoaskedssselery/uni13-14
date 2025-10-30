@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cards.forEach(card => {
       const raw = (card.dataset.category || '').toLowerCase();
-      const cats = raw.split(/\s+/).filter(Boolean); // поддержка "portfolio layout"
+      const cats = raw.split(/\s+/).filter(Boolean);
       const show = target === 'all' || cats.includes(target);
 
       card.style.display = show ? '' : 'none';

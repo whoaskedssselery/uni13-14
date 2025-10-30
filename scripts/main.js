@@ -1,25 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('project-modal');
-  if (modal) {
-    const modalImg = modal.querySelector('.project-modal__img');
-    const modalTitle = modal.querySelector('.project-modal__title');
-    const modalDesc = modal.querySelector('.project-modal__desc');
-    const modalCode = modal.querySelector('#modal-code');
-    const modalClose = modal.querySelector('#modal-close');
+  if (!modal) return;
 
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const img = card.querySelector('img');
-        const title = card.querySelector('.project-card__title');
-        const desc = card.querySelector('.project-card__desc');
-        const code = card.querySelector('a');
+  const modalImg = modal.querySelector('.project-modal__img');
+  const modalTitle = modal.querySelector('.project-modal__title');
+  const modalDesc = modal.querySelector('.project-modal__desc');
+  const modalCode = modal.querySelector('#modal-code');
+  const modalClose = modal.querySelector('#modal-close');
 
-        if (img) modalImg.src = img.src || '';
-        if (title) modalTitle.textContent = title.textContent || '';
-        if (desc) modalDesc.textContent = desc.textContent || '';
-        modalCode.href = code?.href || '#';
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('img');
+      const title = card.querySelector('.project-card__title');
+      const desc = card.querySelector('.project-card__desc');
+      const link = card.querySelector('a');
 
-        modal.classList.add('open');
+      if (img) modalImg.src = img.src;
+      if (title) modalTitle.textContent = title.textContent;
+      if (desc) modalDesc.textContent = desc.textContent;
+
+      modalCode.href = link ? link.href : '';
+
+      modal.classList.add('open');
       });
     });
 
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', e => {
       if (e.target === modal) modal.classList.remove('open');
     });
-  }
+  });
 
   const filterToggle = document.getElementById('filter-toggle');
   const filterBlock = document.getElementById('projects-filter');
@@ -125,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => (bar.style.width = width), 300);
     });
   }
-});
 
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

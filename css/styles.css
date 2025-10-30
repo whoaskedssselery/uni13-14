@@ -410,6 +410,7 @@ a:hover {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .project-card:hover {
   transform: translateY(-5px);
@@ -420,14 +421,14 @@ a:hover {
   height: 280px;
   -o-object-fit: cover;
      object-fit: cover;
-  padding: 20px;
+  padding: 15px;
   border-radius: 7px;
 }
 .project-card__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 7px;
   flex-grow: 1;
 }
 .project-card__title {
@@ -440,7 +441,7 @@ a:hover {
   font-size: 15px;
   line-height: 1.5;
   color: var(--color-muted);
-  margin-bottom: 15px;
+  margin-bottom: 9px;
   text-align: center;
 }
 .project-card__btn {

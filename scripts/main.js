@@ -80,3 +80,35 @@ function showNotification(text, type = 'success') {
   }, 3000);
 }
 
+const diaryForm = document.getElementById('diary-form');
+const diaryTable = document.getElementById('diary-table-body');
+
+if (diaryForm && diaryTable) {
+  diaryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const title = diaryForm.querySelector('#task-title').value.trim();
+    const desc = diaryForm.querySelector('#task-desc').value.trim();
+    const status = diaryForm.querySelector('#task-status').value;
+
+    if (!title || !desc) {
+      showNotification('Заполните все поля!', 'error');
+      return;
+    }
+
+    const row = document.createElement('tr');
+    const index = diaryTable.children.length + 1;
+
+    row.innerHTML = `
+      <td>${index}</td>
+      <td>${title}</td>
+      <td>${desc}</td>
+      <td class="${status === 'Выполнено' ? 'done' : ''}">${status}</td>
+    `;
+
+    diaryTable.appendChild(row);
+    showNotification('Запись добавлена!', 'success');
+    diaryForm.reset();
+  });
+}
+

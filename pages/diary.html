@@ -1,42 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>SSSELERY | DAIRY</title>
-   <link rel="shortcut icon" href="../assets/img/logo.ico" type="image/x-icon">
-   <link rel="stylesheet" href="../css/styles.css">
+   <link rel="shortcut icon" href="../assets/img/logo.ico" type="image/x-icon" />
+   <link rel="stylesheet" href="../css/styles.css" />
 </head>
+
 <body>
    <header class="header">
       <div class="header-wrapper">
-         <a href="index.html" class="header__logo logo">ssselery</a>
+         <a href="../index.html" class="header__logo logo">ssselery</a>
          <nav class="nav">
             <ul class="nav__list">
-               <li class="nav__item"><a href="../index.html">Главная</a></li>
-               <li class="nav__item"><a href="./projects.html">Проекты</a></li>
-               <li class="nav__item"><a href="./diary.html">Дневник</a></li>
-               <li class="nav__item"><a href="./contacts.html">Контакты</a></li>
+               <li><a href="../index.html">Главная</a></li>
+               <li><a href="./projects.html">Проекты</a></li>
+               <li><a href="./diary.html" class="active">Дневник</a></li>
+               <li><a href="./contacts.html">Контакты</a></li>
             </ul>
          </nav>
       </div>
    </header>
 
    <main class="content">
+      <section class="dairy container">
+         <h1 class="diary__title">Учебный дневник</h1>
+         <p class="diary__subtitle">
+            Здесь фиксируются выполненные и текущие задания по дисциплине “Фронтенд и бэкенд разработка”.
+         </p>
+
+         <div class="diary__tasks">
+            <table class="diary__table">
+               <thead>
+                  <tr>
+                     <th>№</th>
+                     <th>Тема</th>
+                     <th>Описание</th>
+                     <th>Статус</th>
+                  </tr>
+               </thead>
+               <tbody id="diary-table-body">
+                  <tr>
+                     <td>1</td>
+                     <td>Создание структуры проекта</td>
+                     <td>Разработана базовая структура HTML и SCSS файлов.</td>
+                     <td class="done">Выполнено</td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>Реализация главной страницы</td>
+                     <td>Создана основа для index.html, добавлены секции и базовые стили.</td>
+                     <td class="done">Выполнено</td>
+                  </tr>
+                  <tr>
+                     <td>3</td>
+                     <td>Навыки и резюме</td>
+                     <td>Оформлены блоки “Резюме” и “Навыки”, подключены SCSS миксины.</td>
+                     <td class="done">Выполнено</td>
+                  </tr>
+                  <tr>
+                     <td>4</td>
+                     <td>Страница проектов</td>
+                     <td>Реализован фильтр проектов и карточки с адаптивной сеткой.</td>
+                     <td class="done">Выполнено</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+
+         <form id="diary-form" class="diary__form">
+            <h2 class="diary__form-title">Добавить запись</h2>
+            <div class="form__group">
+               <label for="task-title">Тема</label>
+               <input type="text" id="task-title" placeholder="Введите тему задания" required />
+            </div>
+
+            <div class="form__group">
+               <label for="task-desc">Описание</label>
+               <textarea id="task-desc" rows="3" placeholder="Введите описание" required></textarea>
+            </div>
+
+            <div class="form__group">
+               <label for="task-status">Статус</label>
+               <select id="task-status">
+                  <option value="Выполнено">Выполнено</option>
+                  <option value="В процессе">В процессе</option>
+                  <option value="Не начато">Не начато</option>
+               </select>
+            </div>
+
+            <button type="submit" class="form__button button">Добавить</button>
+         </form>
+      </section>
 
    </main>
 
    <footer class="footer">
       <ul class="footer__menu">
-         <li class="footer__item">
-            <p class="footer__desc">© 2025-2026 гг. Все права защищены</p>
+         <li>
+            <p class="footer__desc">© 2025–2026 гг. Все права защищены</p>
          </li>
-         <li class="footer__item">
-            <a href="https://github.com/whoaskedssselery/" class="footer__link">github.com/whoaskedssselery</a>
-         </li>
+         <li><a href="https://github.com/whoaskedssselery/" class="footer__link">github.com/whoaskedssselery</a></li>
       </ul>
    </footer>
 
-   <script src="./scripts/main.js"></script>
+   <script src="../scripts/main.js"></script>
 </body>
+
 </html>

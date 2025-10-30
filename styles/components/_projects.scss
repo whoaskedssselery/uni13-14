@@ -43,6 +43,9 @@
    }
 
    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
    }
 
@@ -58,6 +61,7 @@
       line-height: 1.5;
       color: var(--color-muted);
       margin-bottom: 15px;
+      text-align: center;
    }
 
    &__btn {

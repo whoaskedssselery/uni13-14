@@ -422,6 +422,9 @@ a:hover {
   border-radius: 7px;
 }
 .project-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 .project-card__title {
@@ -435,6 +438,7 @@ a:hover {
   line-height: 1.5;
   color: var(--color-muted);
   margin-bottom: 15px;
+  text-align: center;
 }
 .project-card__btn {
   display: flex;

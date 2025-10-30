@@ -1,14 +1,26 @@
-const filterForm = document.getElementById("project-filter-form");
-const projectCards = document.querySelectorAll(".project-card");
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('project-filter-form');
+  if (!form) return;
 
-filterForm.addEventListener("change", (e) => {
-  const category = e.target.value;
+  const inputs = form.querySelectorAll('input[type="radio"][name="category"]');
+  const cards = document.querySelectorAll('.project-card');
 
-  projectCards.forEach((card) => {
-    if (category === "all" || card.dataset.category === category) {
-      card.style.display = "flex";
-    } else {
-      card.style.display = "none";
-    }
+  const applyFilter = (category) => {
+    const target = (category || 'all').toLowerCase();
+
+    cards.forEach(card => {
+      const raw = (card.dataset.category || '').toLowerCase();
+      const cats = raw.split(/\s+/).filter(Boolean); // поддержка "portfolio layout"
+      const show = target === 'all' || cats.includes(target);
+
+      card.style.display = show ? '' : 'none';
+    });
+  };
+
+  inputs.forEach(input => {
+    input.addEventListener('change', () => applyFilter(input.value));
   });
+
+  const checked = form.querySelector('input[name="category"]:checked');
+  applyFilter(checked ? checked.value : 'all');
 });

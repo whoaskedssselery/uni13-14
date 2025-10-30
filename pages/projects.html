@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -7,6 +8,7 @@
    <link rel="shortcut icon" href="../assets/img/logo.ico" type="image/x-icon">
    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
    <header class="header">
       <div class="header-wrapper">
@@ -24,6 +26,78 @@
 
    <main class="content">
 
+      <section class="projects-page container">
+         <h1 class="projects-page__title">Проекты</h1>
+         <p class="projects-page__subtitle">
+            Здесь собраны учебные и личные работы. Используй фильтр справа, чтобы выбрать нужную категорию.
+         </p>
+
+         <div class="projects-page__wrapper">
+            <div class="projects-page__grid">
+               <article class="project-card" data-category="layout">
+                  <img src="../assets/img/project1.png" alt="Landing Page" class="project-card__img">
+                  <div class="project-card__content">
+                     <h3 class="project-card__title">Landing Page</h3>
+                     <p class="project-card__desc">
+                        Одностраничный сайт для бренда. Адаптивная верстка и плавные анимации.
+                     </p>
+                     <a href="https://github.com/whoaskedssselery?tab=repositories" class="project-card__btn button"
+                        target="_blank">Подробнее</a>
+                  </div>
+               </article>
+
+               <article class="project-card" data-category="linux">
+                  <img src="../assets/img/project2.png" alt="Customization repo" class="project-card__img">
+                  <div class="project-card__content">
+                     <h3 class="project-card__title">Customization Repo</h3>
+                     <p class="project-card__desc">
+                        Репозиторий с инструкцией по кастомизации Ubuntu и конфигурации рабочего окружения.
+                     </p>
+                     <a href="https://github.com/whoaskedssselery?tab=repositories" class="project-card__btn button"
+                        target="_blank">Подробнее</a>
+                  </div>
+               </article>
+
+               <article class="project-card" data-category="portfolio">
+                  <img src="../assets/img/project3.png" alt="Portfolio Website" class="project-card__img">
+                  <div class="project-card__content">
+                     <h3 class="project-card__title">Portfolio Website</h3>
+                     <p class="project-card__desc">
+                        Личный сайт-портфолио на SCSS и компонентной структуре. Полностью адаптивен.
+                     </p>
+                     <a href="https://github.com/whoaskedssselery/uni13-14/" class="project-card__btn button"
+                        target="_blank">Подробнее</a>
+                  </div>
+               </article>
+
+               <article class="project-card" data-category="practice">
+                  <img src="../assets/img/project4.png" alt="FrontPractise" class="project-card__img">
+                  <div class="project-card__content">
+                     <h3 class="project-card__title">FrontPractise</h3>
+                     <p class="project-card__desc">
+                        Учебный репозиторий с материалами и кодом по HTML, CSS, SCSS и JS.
+                     </p>
+                     <a href="https://github.com/whoaskedssselery/FrontPractise" class="project-card__btn button"
+                        target="_blank">Подробнее</a>
+                  </div>
+               </article>
+            </div>
+
+            <aside class="projects-filter">
+               <h3 class="projects-filter__title">Фильтр проектов</h3>
+
+               <form id="project-filter-form">
+                  <label><input type="radio" name="category" value="all" checked> Все проекты</label>
+                  <label><input type="radio" name="category" value="layout"> Верстка</label>
+                  <label><input type="radio" name="category" value="linux"> Linux / Ubuntu</label>
+                  <label><input type="radio" name="category" value="portfolio"> Портфолио</label>
+                  <label><input type="radio" name="category" value="practice"> Учебные</label>
+               </form>
+            </aside>
+         </div>
+      </section>
+
+
    </main>
 
    <footer class="footer">
@@ -37,6 +111,7 @@
       </ul>
    </footer>
 
-   <script src="./scripts/main.js"></script>
+   <script src="../scripts/main.js"></script>
 </body>
+
 </html>

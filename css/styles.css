@@ -1,14 +1,14 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Medium.woff") format("woff"), url("../assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  src: url("assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"), url("../assets/fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  src: url("assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,8 @@
   --color-hover: #3b3a36;
   --color-muted: #55534e;
   --color-section: #d9cfc3;
-  --font-family: "Montserrat", sans-serif;
+  --color-dark: #000;
+  --font-family: 'Montserrat', sans-serif;
   --link-height: 20px;
   --fs-logo: clamp(24px, 1rem + 2.2vw, 32px);
   --fs-h1: clamp(26px, 1.2rem + 2vw, 34px);
@@ -228,7 +229,7 @@ body {
   flex-direction: column;
   font-size: var(--fs-base);
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-dark);
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 1.6;
@@ -328,8 +329,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
 }
 
 .container {
@@ -360,6 +360,7 @@ textarea {
 }
 
 .header {
+  isolation: isolate;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -388,18 +389,23 @@ textarea {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .resume__image {
-  width: 200px;
-  aspect-ratio: 1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
   border-radius: 12px;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-section);
 }
 .resume-info {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-inline: 20px;
+}
+@media (max-width: 768px) {
+  .resume-info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .resume-wrapper {
   display: flex;
@@ -413,7 +419,7 @@ textarea {
   font-size: 18px;
   text-align: center;
   line-height: 1.5;
-  color: var(--color-text);
+  color: var(--color-dark);
   margin: 0;
 }
 
@@ -433,7 +439,7 @@ textarea {
   font-size: 24px;
   font-weight: 700;
   text-align: center;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .skills .skill {
   display: flex;
@@ -442,13 +448,13 @@ textarea {
 }
 .skills .skill__name {
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .skills .skill__progress {
   position: relative;
   width: 100%;
   height: 16px;
-  background-color: var(--color-border);
+  background-color: var(--color-section);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -462,7 +468,7 @@ textarea {
   align-self: flex-end;
   font-weight: 600;
   font-size: 14px;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 
 .projects {
@@ -474,7 +480,7 @@ textarea {
 .projects__title {
   font-size: 24px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-dark);
   text-align: center;
   margin-bottom: 15px;
 }
@@ -501,8 +507,7 @@ textarea {
 .project-card__img {
   width: 100%;
   height: 280px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding: 15px;
   border-radius: 7px;
 }
@@ -517,7 +522,7 @@ textarea {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .project-card__desc {
   font-size: 15px;
@@ -547,7 +552,7 @@ textarea {
 .projects__title-new {
   font-size: 28px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-dark);
   text-align: center;
   margin-bottom: 0;
 }
@@ -568,7 +573,7 @@ textarea {
 
 .projects-filter {
   background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-section);
   border-radius: 10px;
   padding: 15px 20px;
   margin-bottom: 25px;
@@ -584,7 +589,7 @@ textarea {
 }
 .projects-filter label {
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-dark);
   cursor: pointer;
 }
 .projects-filter label input {
@@ -623,7 +628,7 @@ textarea {
 .project-modal__title {
   font-size: 22px;
   margin-bottom: 10px;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .project-modal__desc {
   font-size: 16px;
@@ -637,7 +642,7 @@ textarea {
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .project-modal #modal-code {
   display: inline-block;
@@ -662,14 +667,14 @@ textarea {
 }
 .filter-btn {
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 
 .contacts__title {
   font-size: 28px;
   font-weight: 700;
   text-align: center;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .contacts__subtitle {
   text-align: center;
@@ -679,8 +684,7 @@ textarea {
 .contacts__content {
   display: flex;
   justify-content: center;
-  -moz-column-gap: 140px;
-       column-gap: 140px;
+  column-gap: 140px;
 }
 @media (max-width: 665px) {
   .contacts__content {
@@ -690,7 +694,7 @@ textarea {
 }
 .contacts__info {
   font-size: 16px;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .contacts__info a {
   color: var(--color-primary);
@@ -714,18 +718,18 @@ textarea {
 }
 .contacts__form label {
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .contacts__form input,
 .contacts__form textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-section);
   border-radius: 6px;
   background-color: var(--color-bg);
   font-family: inherit;
   font-size: 15px;
-  color: var(--color-text);
+  color: var(--color-dark);
   transition: border 0.2s ease;
 }
 .contacts__form input:focus,
@@ -769,7 +773,7 @@ textarea {
   text-align: center;
   font-size: 28px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .dairy__subtitle {
   text-align: center;
@@ -784,7 +788,7 @@ textarea {
 .dairy__table th, .dairy__table td {
   padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-section);
 }
 .dairy__table th {
   background-color: var(--color-muted);
@@ -806,7 +810,7 @@ textarea {
 .dairy__form-title {
   font-size: 20px;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-dark);
   margin-bottom: 10px;
 }
 .dairy__form input,
@@ -814,11 +818,11 @@ textarea {
 .dairy__form select {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-section);
   border-radius: 6px;
   background-color: var(--color-bg);
   font-size: 15px;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .dairy__form input:focus,
 .dairy__form textarea:focus,
@@ -833,7 +837,7 @@ textarea {
 .dairy__courses-title {
   font-size: 22px;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-dark);
   margin-bottom: 20px;
 }
 .dairy__courses .courses__list {
@@ -855,7 +859,7 @@ textarea {
 }
 .dairy__courses .course__name {
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-dark);
 }
 .dairy__courses .course__percent {
   color: var(--color-muted);
@@ -864,7 +868,7 @@ textarea {
 .dairy__courses .course__bar {
   width: 100%;
   height: 12px;
-  background-color: var(--color-border);
+  background-color: var(--color-section);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -890,13 +894,15 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  row-gap: 5px;
 }
 @media (max-width: 1200px) {
   .footer__menu {
     row-gap: 0;
   }
+}
+.footer__menu {
+  flex-direction: column;
+  row-gap: 5px;
 }
 .footer__link {
   display: flex;
@@ -904,4 +910,6 @@ textarea {
   align-items: center;
   max-height: 20px;
   height: 100%;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

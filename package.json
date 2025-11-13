@@ -1,0 +1,25 @@
+{
+  "name": "uni13-14",
+  "version": "1.0.0",
+  "description": "Проект создан в рамках дисциплины **«Фронтенд и бэкенд разработка»** (практическое занятие №13).  \r Сайт представляет собой **многостраничное портфолио**, которое сочетает функции визитки, галереи проектов и учебного дневника.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "sass": "sass --watch styles/styles.scss css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whoaskedssselery/uni13-14.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/whoaskedssselery/uni13-14/issues"
+  },
+  "homepage": "https://github.com/whoaskedssselery/uni13-14#readme",
+  "devDependencies": {
+    "sass": "^1.94.0"
+  }
+}

@@ -7,11 +7,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   &__image{
-   @include mix.square(200);
-
-   object-fit: cover;
-   border-radius: 12px;
-   border: 2px solid var(--color-border);
+	  width: 200px;
+	  height: auto;
+	  object-fit: cover;
+	  border-radius: 12px;
+	  border: 2px solid var(--color-border);
   }
 
   &-info {

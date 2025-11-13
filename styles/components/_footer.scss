@@ -1,8 +1,9 @@
 @use "../mixins" as mix;
+@use "../media" as media;
 
 .footer {
    @include mix.flex-center;
-   column-gap: 20px;
+
    max-height: 75px;
    height: 100%;
 
@@ -11,14 +12,21 @@
 
    background-color: var(--color-section);
 
+
    &__menu {
       @include mix.flex-center;
+      @include media.media(1200) {
+         row-gap: 0;
+      }
 
       flex-direction: column;
       row-gap: 5px;
    }
 
    &__link {
-     @include mix.flex-center;
+      @include mix.flex-center;
+
+      max-height: 20px;
+      height: 100%;
    }
 }

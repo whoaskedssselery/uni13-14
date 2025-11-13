@@ -35,3 +35,8 @@
   width: #{$size}px;
   aspect-ratio: 1;
 }
+
+@mixin safe-area {
+  padding-block-start: calc(1rem + env(safe-area-inset-top));
+  padding-block-end: calc(1rem + env(safe-area-inset-bottom));
+}

@@ -3,13 +3,14 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
    <title>SSSELERY | MAIN</title>
    <link rel="shortcut icon" href="./assets/img/logo.ico" type="image/x-icon">
    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
+   <a class="skip-link" href="#main">Перейти к основному содержимому</a>
    <header class="header">
       <div class="header-wrapper">
          <a href="index.html" class="header__logo logo">ssselery</a>
@@ -23,12 +24,18 @@
          </nav>
       </div>
    </header>
-
-   <main class="content">
+   <main class="content" id="main">
       <section class="resume container">
          <div class="resume-info">
-            <img src="./assets/img/logo.jpg" alt="Логотип ssselery" height="100" width="80" class="resume__image">
-            <div class="resume-wrapper">
+	         <img
+		         src="./assets/img/logo.jpg"
+		         srcset="./assets/img/logo-400.jpg 400w, ./assets/img/logo-800.jpg 800w"
+		         sizes="200px"
+		         alt="Логотип ssselery"
+		         class="resume__image"
+		         loading="lazy"
+	         />
+	         <div class="resume-wrapper">
                <div class="description">
                   <p><strong>Имя:</strong> Коржнев Максим</p>
                   <p><strong>Группа:</strong> ЭФБО-05-24</p>

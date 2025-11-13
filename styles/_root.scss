@@ -1,4 +1,6 @@
 :root {
+  --color-scheme: light dark;
+
   --color-bg: #f3eee7;
   --color-bg-alt: #ffffff;
   --color-primary: #d98324;
@@ -10,4 +12,9 @@
   --font-family: 'Montserrat', sans-serif;
 
   --link-height: 20px;
+
+  --fs-logo: clamp(24px, 1rem + 2.2vw, 32px);
+  --fs-h1: clamp(26px, 1.2rem + 2vw, 34px);
+  --fs-h2: clamp(20px, 1rem + 1.2vw, 24px);
+  --fs-base: 16px;
 }

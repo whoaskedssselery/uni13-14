@@ -1,14 +1,14 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
+  src: url('../assets/fonts/Montserrat/Montserrat-Medium.woff2') format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  src: url('../assets/fonts/Montserrat/Montserrat-Bold.woff2') format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
   --color-scheme: light dark;
   --color-bg: #f3eee7;
   --color-bg-alt: #ffffff;
-  --color-primary: #d98324;
+  --color-primary: #b1630d;
   --color-accent: #a23b72;
   --color-hover: #3b3a36;
   --color-muted: #55534e;
@@ -799,7 +799,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0.03);
 }
 .dairy__table .done {
-  color: #3bb273;
+  color: #227d4d;
   font-weight: 600;
 }
 .dairy__form {
